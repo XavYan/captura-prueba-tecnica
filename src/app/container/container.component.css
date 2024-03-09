@@ -1,0 +1,5 @@
+main {
+    max-width: 100%;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    background-color: lightcoral;
+}

@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --header-height: 80px;
+    --footer-height: 100px;
+}
+
+body {
+    margin: 0;
+}
