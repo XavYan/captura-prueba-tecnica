@@ -45,7 +45,11 @@
     </thead>
     <tbody>
         @for (marker of filterTable(); track $index) {
-            <tr (click)="onMarkerRowClick($event)" [attr.data-row]="$index">
+            <tr 
+                [attr.data-row-lat]="marker.lat"
+                [attr.data-row-lng]="marker.lng"
+                (click)="onMarkerRowClick($event)"
+            >
                 <td>{{ marker.ccaa }}</td>
                 <td>{{ marker.province }}</td>
                 <td>{{ marker.city }}</td>

@@ -29,9 +29,17 @@ export class MarkerTableComponent {
   markerKeySort: keyof Marker = "ccaa";
 
   onMarkerRowClick(e: MouseEvent) {
-    const index = (e.currentTarget as HTMLElement).getAttribute('data-row');
-    if (index !== null) {
-      this.locateMarker.emit(this.markerList.at(Number(index)));
+    const lat = (e.currentTarget as HTMLElement).getAttribute('data-row-lat');
+    const lng = (e.currentTarget as HTMLElement).getAttribute('data-row-lng');
+    if (lat !== null && lng !== null) {
+      // In order to find the correct marker,
+      // we test both latitude and longitude
+      this.locateMarker.emit(
+        this.markerList.find(marker =>
+          marker.lat.toString() === lat
+          && marker.lng.toString() === lng
+        )
+      );
     }
   }
 
