@@ -20,17 +20,6 @@ export class MarkerService {
   }
 
   createNewMarker(reportMarker: ReportMarker) {
-    const marker: Marker = {
-      ccaa: "-",
-      province: "-",
-      city: "-",
-      project: reportMarker.report.project,
-      description: reportMarker.report.description,
-      date: reportMarker.report.saved_date,
-      lat: reportMarker.report.lat,
-      lng: reportMarker.report.lng
-    }
-    //this.markerList.push(marker);
     return this.http.post(this.apiURL, reportMarker);
   }
 }
