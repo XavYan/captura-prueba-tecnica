@@ -36,3 +36,41 @@ tbody > tr:hover {
     background-color: var(--accent-color);
     cursor: pointer;
 }
+
+/* Styling filter options */
+form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+form label {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 10px;
+}
+
+form input {
+    padding: 5px;
+    width: 120px;
+    will-change: width;
+    transition: width .2s;
+    border-radius: 4px;
+    border: 1px solid #808080;
+}
+
+form input:focus {
+    width: 180px;
+}
+
+form input:focus-visible {
+    outline-color: var(--accent-color);
+}
+
+form button {
+    border: none;
+    padding: 5px 15px;
+}

@@ -1,3 +1,7 @@
+<form>
+    <label>Buscar</label>
+    <input placeholder="Proyecto" [(ngModel)]="projectSearch" name="projectSearch">
+</form>
 <table>
     <thead>
         <tr>
@@ -12,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (marker of markerList; track $index) {
+        @for (marker of filterTable(); track $index) {
             <tr (click)="onMarkerRowClick($event)" [attr.data-row]="$index">
                 <td>{{ marker.ccaa }}</td>
                 <td>{{ marker.province }}</td>
