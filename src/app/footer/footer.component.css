@@ -1,5 +1,33 @@
 footer {
     width: 100%;
     height: var(--footer-height);
-    background-color: green;
+    background-color: rgb(195, 198, 192);
+    padding: 0 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer > p {
+    text-align: right;
+}
+
+/* Navigator */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    will-change: color;
+    transition: color .1s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    cursor: pointer;
 }
