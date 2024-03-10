@@ -38,22 +38,31 @@ tbody > tr:hover {
 }
 
 /* Styling filter options */
-form {
+.filter-options .filter-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-row {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-bottom: 10px;
 }
 
-form label {
+.filter-row .filter label {
+    display: inline-block;
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     padding-right: 10px;
+    min-width: 80px;
 }
 
-form input {
+.filter-row input,
+.filter-row select
+{
     padding: 5px;
     width: 120px;
     will-change: width;
@@ -62,15 +71,19 @@ form input {
     border: 1px solid #808080;
 }
 
-form input:focus {
+.filter-row select[name="citySearch"] {
+    width: 200px;
+}
+
+.filter-row input:focus {
     width: 180px;
 }
 
-form input:focus-visible {
+.filter-row input:focus-visible {
     outline-color: var(--accent-color);
 }
 
-form button {
+.filter-row button {
     border: none;
     padding: 5px 15px;
 }

@@ -17,7 +17,16 @@ export class MarkerTableComponent {
   @Input() markerList: Marker[] = [];
   @Output() locateMarker = new EventEmitter<Marker>();
 
+  // Variable to identify the project we are looking for
+  // in the search input
   projectSearch: string = "";
+
+  // Variable to identify the city we are looking for
+  // in the search input
+  citySearch: string = "";
+
+  // Variable to identify the marker key where to sort
+  markerKeySort: keyof Marker = "ccaa";
 
   onMarkerRowClick(e: MouseEvent) {
     const index = (e.currentTarget as HTMLElement).getAttribute('data-row');
@@ -27,11 +36,26 @@ export class MarkerTableComponent {
   }
 
   filterTable(): Marker[] {
-    if (this.projectSearch.length === 0) {
-      return this.markerList;
+    let filteredMarkerList = this.markerList
+      .filter(
+        marker => marker.project.toLowerCase().includes(this.projectSearch.toLowerCase())
+      );
+
+    if (this.citySearch !== "") {
+      filteredMarkerList = filteredMarkerList.filter(marker => marker.city === this.citySearch);
     }
-    return this.markerList.filter(
-      marker => marker.project.toLowerCase().includes(this.projectSearch.toLowerCase())
-    );
+
+    return filteredMarkerList
+      .sort((a, b) => a[this.markerKeySort].toString().localeCompare(b[this.markerKeySort].toString()));
+  }
+
+  getCities(): string[] {
+    const markerCities: string[] = [];
+    for (const marker of this.markerList) {
+      if (!markerCities.includes(marker.city)) {
+        markerCities.push(marker.city);
+      }
+    }
+    return markerCities;
   }
 }

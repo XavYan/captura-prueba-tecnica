@@ -1,7 +1,35 @@
-<form>
-    <label>Buscar</label>
-    <input placeholder="Proyecto" [(ngModel)]="projectSearch" name="projectSearch">
-</form>
+<div class="filter-options">
+    <div class="filter-row">
+        <div class="filter">
+            <label for="projectSearch">Proyecto</label>
+            <input [(ngModel)]="projectSearch" name="projectSearch">
+        </div>
+        <div class="filter">
+            <label for="keySort">Ordenar por</label>
+            <select name="keySort" [(ngModel)]="markerKeySort" name="markerKeySort">
+                <option value="ccaa">CC.AA.</option>
+                <option value="province">Provincia</option>
+                <option value="city">Ciudad</option>
+                <option value="project">Proyecto</option>
+                <option value="description">Descripción</option>
+                <option value="date">Fecha</option>
+                <option value="lat">Latitud</option>
+                <option value="lng">Longitud</option>
+            </select>
+        </div>
+    </div>
+    <div class="filter-row">
+        <div class="filter">
+            <label for="citySearch">Ciudad</label>
+            <select name="citySearch" [(ngModel)]="citySearch" name="citySearch">
+                <option default value="">--</option>
+                @for (city of this.getCities(); track $index) {
+                    <option>{{ city }}</option>
+                }
+            </select>
+        </div>
+    </div>
+</div>
 <table>
     <thead>
         <tr>
