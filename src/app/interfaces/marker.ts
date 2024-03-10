@@ -5,6 +5,6 @@ export interface Marker {
     project: string;
     description: string;
     date: Date;
-    lat: Number;
-    lng: Number;
+    lat: number;
+    lng: number;
 }
