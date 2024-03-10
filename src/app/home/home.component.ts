@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import L from 'leaflet'
 
+import { MarkerTableComponent } from '../marker-table/marker-table.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [
+    MarkerTableComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -1,0 +1,31 @@
+/* Styling markers table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+
+tr {
+    will-change: background-color;
+    transition: background-color .2s;
+}
+
+tbody > tr:hover {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
