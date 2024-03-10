@@ -4,8 +4,3 @@ main {
     padding: 30px;
     box-sizing: border-box;
 }
-
-#map {
-    height: 280px;
-    margin: 20px auto;
-}
