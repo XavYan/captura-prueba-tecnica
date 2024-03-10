@@ -29,11 +29,22 @@ export class HomeComponent implements OnInit {
   }
 
   createNewMarker(marker: ReportMarker) {
-    this.markerService.createNewMarker(marker);
-    this.updateMarkerList();
+    this.markerService.createNewMarker(marker).subscribe({
+      next: response => {
+        this.updateMarkerList();
+      },
+      error: response => {
+        alert("No se ha podido crear correctamente el marcador.");
+      }
+    });
   }
 
   updateMarkerList() {
-    this.markerList = this.markerService.getAllMarkers();
+    this.markerService.getAllMarkers().subscribe({
+      next: response => { this.markerList = response; },
+      error: () => {
+        alert("Ha ocurrido un error al obtener los datos. Si el error persiste, por favor contacte con soporte.");
+      }
+    });
   }
 }

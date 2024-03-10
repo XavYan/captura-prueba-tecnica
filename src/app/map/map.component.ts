@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import L, { LeafletMouseEvent } from 'leaflet'
 import { Marker } from '../interfaces/marker';
 import { ReportMarker } from '../interfaces/report-marker';
@@ -10,32 +10,50 @@ import { ReportMarker } from '../interfaces/report-marker';
   templateUrl: './map.component.html',
   styleUrl: './map.component.css'
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnChanges {
   @Input() markerList: Marker[] = [];
   @Output() createNewMarkerEvent = new EventEmitter<ReportMarker>();
 
+  private map?: L.Map;
+
   ngOnInit(): void {
     // Creating the map
-    var map = L.map('map').setView([28.467623, -16.2589725], 13);
+    this.map = L.map('map').setView([28.467623, -16.2589725], 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
+    }).addTo(this.map);
 
-    // For each marker, we create a marker into the map
-    for (let marker of this.markerList) {
-      this.setMarkerIntoMap(map, marker);
-    }
+    // Setting the markers into Map
+    this.setMarkers();
 
     // Finally, we connect out onMapClick function
     // with map click event to let users create
     // a new marker
     // 'this' is sent to set the context of the event
-    map.on('click', e => this.onMapClick(e), this);
+    this.map.on('click', e => this.onMapClick(e), this);
   }
 
-  setMarkerIntoMap(map: L.Map, marker: Marker) {
-    const markerPoint = L.marker([marker.lat, marker.lng]).addTo(map);
+  ngOnChanges(changes: SimpleChanges): void {
+    // Setting the markers into Map
+    this.setMarkers();
+  }
+
+  setMarkers() {
+    // For each marker, we create a marker into the map
+    for (let marker of this.markerList) {
+      this.setMarkerIntoMap(marker);
+    }
+  }
+
+  setMarkerIntoMap(marker: Marker) {
+    // If map is undefined (which shouldn't)
+    // we don't do nothing
+    if (this.map === undefined) {
+      return;
+    }
+
+    const markerPoint = L.marker([marker.lat, marker.lng]).addTo(this.map);
     markerPoint.bindPopup(`
       <b>CC.AA.:</b> ${marker.ccaa}<br>
       <b>Provincia:</b> ${marker.province}<br>
@@ -49,8 +67,13 @@ export class MapComponent implements OnInit {
   }
 
   onMapClick(e: LeafletMouseEvent) {
+    // If map is undefined (which shouldn't)
+    // we don't do nothing
+    if (this.map === undefined) {
+      return;
+    }
+
     // We create the popup when user clicks on the map
-    let map = e.target;
     let popup = L.popup();
     popup
       .setLatLng(e.latlng)
@@ -66,12 +89,13 @@ export class MapComponent implements OnInit {
           <button type="submit">Confirmar</button>
         </form>
       `)
-      .openOn(map);
+      .openOn(this.map);
 
     // Once popup was created and shown, we proceed to connect submit event
     // with the form, in order to populate the information to its parent
     // component
     document.getElementById('newMarkerForm')?.addEventListener('submit', (e: any) => {
+      e.preventDefault();
       const marker: ReportMarker = {
         report: {
           project: e.target.project.value,
@@ -82,8 +106,9 @@ export class MapComponent implements OnInit {
         }
       };
 
-      console.log("Creado marker");
       this.createNewMarkerEvent.emit(marker);
+
+      popup.close();
     });
   }
 }
