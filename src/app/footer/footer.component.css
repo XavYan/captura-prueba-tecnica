@@ -1,8 +1,8 @@
 footer {
     width: 100%;
-    height: var(--footer-height);
+    min-height: var(--footer-height);
     background-color: rgb(195, 198, 192);
-    padding: 0 30px;
+    padding: 30px 30px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -11,13 +11,30 @@ footer {
 
 footer > p {
     text-align: right;
+    align-self: self-end;
 }
 
 /* Navigator */
+nav span {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+nav ul li:first-child {
+    padding-top: 5px;
+}
+
+nav ul li {
+    padding-bottom: 5px;
 }
 
 nav a {
@@ -25,6 +42,7 @@ nav a {
     color: black;
     will-change: color;
     transition: color .1s;
+    font-size: 14px;
 }
 
 nav a:hover {
