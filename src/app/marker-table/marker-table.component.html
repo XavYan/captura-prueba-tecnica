@@ -12,115 +12,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Canarias</td>
-            <td>Santa Cruz de Tenerife</td>
-            <td>Santa Cruz de Tenerife</td>
-            <td>test</td>
-            <td>nuevo</td>
-            <td>2023-11-08 12:22:06</td>
-            <td>28.467623</td>
-            <td>-16.2589725</td>
-        </tr>
-        <tr>
-            <td>Andalucía</td>
-            <td>Sevilla</td>
-            <td>Sevilla</td>
-            <td>proyecto1</td>
-            <td>descripción1</td>
-            <td>2024-02-15 09:45:00</td>
-            <td>37.388630</td>
-            <td>-5.982070</td>
-        </tr>
-        <tr>
-            <td>Cataluña</td>
-            <td>Barcelona</td>
-            <td>Barcelona</td>
-            <td>proyecto2</td>
-            <td>descripción2</td>
-            <td>2024-03-01 14:30:00</td>
-            <td>41.385063</td>
-            <td>2.173404</td>
-        </tr>
-        <tr>
-            <td>Madrid</td>
-            <td>Madrid</td>
-            <td>Madrid</td>
-            <td>proyecto3</td>
-            <td>descripción3</td>
-            <td>2024-01-20 11:00:00</td>
-            <td>40.416775</td>
-            <td>-3.703790</td>
-        </tr>
-        <tr>
-            <td>Galicia</td>
-            <td>A Coruña</td>
-            <td>A Coruña</td>
-            <td>proyecto4</td>
-            <td>descripción4</td>
-            <td>2024-02-28 16:20:00</td>
-            <td>43.362343</td>
-            <td>-8.411540</td>
-        </tr>
-        <tr>
-            <td>Comunidad Valenciana</td>
-            <td>Valencia</td>
-            <td>Valencia</td>
-            <td>proyecto5</td>
-            <td>descripción5</td>
-            <td>2024-03-10 08:00:00</td>
-            <td>39.469907</td>
-            <td>-0.376288</td>
-        </tr>
-        <tr>
-            <td>Andalucía</td>
-            <td>Sevilla</td>
-            <td>Sevilla</td>
-            <td>proyecto1</td>
-            <td>descripción1</td>
-            <td>2024-02-15 09:45:00</td>
-            <td>37.388630</td>
-            <td>-5.982070</td>
-        </tr>
-        <tr>
-            <td>Cataluña</td>
-            <td>Barcelona</td>
-            <td>Barcelona</td>
-            <td>proyecto2</td>
-            <td>descripción2</td>
-            <td>2024-03-01 14:30:00</td>
-            <td>41.385063</td>
-            <td>2.173404</td>
-        </tr>
-        <tr>
-            <td>Madrid</td>
-            <td>Madrid</td>
-            <td>Madrid</td>
-            <td>proyecto3</td>
-            <td>descripción3</td>
-            <td>2024-01-20 11:00:00</td>
-            <td>40.416775</td>
-            <td>-3.703790</td>
-        </tr>
-        <tr>
-            <td>Galicia</td>
-            <td>A Coruña</td>
-            <td>A Coruña</td>
-            <td>proyecto4</td>
-            <td>descripción4</td>
-            <td>2024-02-28 16:20:00</td>
-            <td>43.362343</td>
-            <td>-8.411540</td>
-        </tr>
-        <tr>
-            <td>Comunidad Valenciana</td>
-            <td>Valencia</td>
-            <td>Valencia</td>
-            <td>proyecto5</td>
-            <td>descripción5</td>
-            <td>2024-03-10 08:00:00</td>
-            <td>39.469907</td>
-            <td>-0.376288</td>
-        </tr>
+        @for (marker of markerList; track $index) {
+            <tr>
+                <td>{{ marker.ccaa }}</td>
+                <td>{{ marker.province }}</td>
+                <td>{{ marker.city }}</td>
+                <td>{{ marker.project }}</td>
+                <td>{{ marker.description }}</td>
+                <td>{{ marker.date.toLocaleString() }}</td>
+                <td>{{ marker.lat }}</td>
+                <td>{{ marker.lng }}</td>
+            </tr>
+        }
     </tbody>
 </table>
