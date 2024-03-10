@@ -111,4 +111,8 @@ export class MapComponent implements OnInit, OnChanges {
       popup.close();
     });
   }
+
+  locateMarker(marker: Marker) {
+    this.map?.setView([marker.lat, marker.lng], 13);
+  }
 }

@@ -13,7 +13,7 @@
     </thead>
     <tbody>
         @for (marker of markerList; track $index) {
-            <tr>
+            <tr (click)="onMarkerRowClick($event)" [attr.data-row]="$index">
                 <td>{{ marker.ccaa }}</td>
                 <td>{{ marker.province }}</td>
                 <td>{{ marker.city }}</td>

@@ -8,5 +8,8 @@
     />
 
     <!-- Table to list all Markers -->
-    <app-marker-table [markerList]="markerList" />
+    <app-marker-table
+        [markerList]="markerList"
+        (locateMarker)="locateMarker($event)"
+    />
 </main>

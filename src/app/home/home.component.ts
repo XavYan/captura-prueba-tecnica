@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { MarkerTableComponent } from '../marker-table/marker-table.component';
 import { MapComponent } from '../map/map.component';
@@ -16,9 +16,12 @@ import { MarkerService } from '../services/marker.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
   markerList: Marker[] = [];
+
+  @ViewChild(MapComponent)
+  private mapComponent!: MapComponent;
 
   constructor(
     private markerService: MarkerService
@@ -26,6 +29,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateMarkerList();
+  }
+
+  ngAfterViewInit(): void {
   }
 
   createNewMarker(marker: ReportMarker) {
@@ -46,5 +52,10 @@ export class HomeComponent implements OnInit {
         alert("Ha ocurrido un error al obtener los datos. Si el error persiste, por favor contacte con soporte.");
       }
     });
+  }
+
+  locateMarker(marker: Marker) {
+    console.log("Localizar marcador " + marker.project);
+    this.mapComponent.locateMarker(marker);
   }
 }

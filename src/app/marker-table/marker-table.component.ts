@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Marker } from '../interfaces/marker';
 
 @Component({
@@ -10,4 +10,12 @@ import { Marker } from '../interfaces/marker';
 })
 export class MarkerTableComponent {
   @Input() markerList: Marker[] = [];
+  @Output() locateMarker = new EventEmitter<Marker>();
+
+  onMarkerRowClick(e: MouseEvent) {
+    const index = (e.currentTarget as HTMLElement).getAttribute('data-row');
+    if (index !== null) {
+      this.locateMarker.emit(this.markerList.at(Number(index)));
+    }
+  }
 }
