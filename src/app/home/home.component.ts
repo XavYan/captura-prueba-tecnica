@@ -28,104 +28,54 @@ export class HomeComponent {
       lng: -16.2589725
     },
     {
-      ccaa: "Andalucía",
-      province: "Sevilla",
-      city: "Sevilla",
-      project: "proyecto1",
-      description: "descripción1",
-      date: new Date("2024-02-15 09:45:00"),
-      lat: 37.388630,
-      lng: -5.982070
+      "ccaa": "Canarias",
+      "province": "Santa Cruz de Tenerife",
+      "city": "Santa Cruz de Tenerife",
+      "project": "proyecto6",
+      "description": "descripción6",
+      "date": new Date("2024-03-10T10:30:00"),
+      "lat": 28.4682,
+      "lng": -16.2546
     },
     {
-      ccaa: "Cataluña",
-      province: "Barcelona",
-      city: "Barcelona",
-      project: "proyecto2",
-      description: "descripción2",
-      date: new Date("2024-03-01 14:30:00"),
-      lat: 41.385063,
-      lng: 2.173404
+      "ccaa": "Canarias",
+      "province": "Santa Cruz de Tenerife",
+      "city": "La Laguna",
+      "project": "proyecto7",
+      "description": "descripción7",
+      "date": new Date("2024-03-12T14:15:00"),
+      "lat": 28.4854,
+      "lng": -16.3208
     },
     {
-      ccaa: "Madrid",
-      province: "Madrid",
-      city: "Madrid",
-      project: "proyecto3",
-      description: "descripción3",
-      date: new Date("2024-01-20 11:00:00"),
-      lat: 40.416775,
-      lng: -3.703790
+      "ccaa": "Canarias",
+      "province": "Santa Cruz de Tenerife",
+      "city": "Puerto de la Cruz",
+      "project": "proyecto8",
+      "description": "descripción8",
+      "date": new Date("2024-03-14T09:00:00"),
+      "lat": 28.4158,
+      "lng": -16.5526
     },
     {
-      ccaa: "Galicia",
-      province: "A Coruña",
-      city: "A Coruña",
-      project: "proyecto4",
-      description: "descripción4",
-      date: new Date("2024-02-28 16:20:00"),
-      lat: 43.362343,
-      lng: -8.411540
+      "ccaa": "Canarias",
+      "province": "Santa Cruz de Tenerife",
+      "city": "Los Cristianos",
+      "project": "proyecto9",
+      "description": "descripción9",
+      "date": new Date("2024-03-16T16:45:00"),
+      "lat": 28.0526,
+      "lng": -16.7214
     },
     {
-      ccaa: "Comunidad Valenciana",
-      province: "Valencia",
-      city: "Valencia",
-      project: "proyecto5",
-      description: "descripción5",
-      date: new Date("2024-03-10 08:00:00"),
-      lat: 39.469907,
-      lng: -0.376288
-    },
-    {
-      ccaa: "Andalucía",
-      province: "Sevilla",
-      city: "Sevilla",
-      project: "proyecto1",
-      description: "descripción1",
-      date: new Date("2024-02-15 09:45:00"),
-      lat: 37.388630,
-      lng: -5.982070
-    },
-    {
-      ccaa: "Cataluña",
-      province: "Barcelona",
-      city: "Barcelona",
-      project: "proyecto2",
-      description: "descripción2",
-      date: new Date("2024-03-01 14:30:00"),
-      lat: 41.385063,
-      lng: 2.173404
-    },
-    {
-      ccaa: "Madrid",
-      province: "Madrid",
-      city: "Madrid",
-      project: "proyecto3",
-      description: "descripción3",
-      date: new Date("2024-01-20 11:00:00"),
-      lat: 40.416775,
-      lng: -3.703790
-    },
-    {
-      ccaa: "Galicia",
-      province: "A Coruña",
-      city: "A Coruña",
-      project: "proyecto4",
-      description: "descripción4",
-      date: new Date("2024-02-28 16:20:00"),
-      lat: 43.362343,
-      lng: -8.411540
-    },
-    {
-      ccaa: "Comunidad Valenciana",
-      province: "Valencia",
-      city: "Valencia",
-      project: "proyecto5",
-      description: "descripción5",
-      date: new Date("2024-03-10 08:00:00"),
-      lat: 39.469907,
-      lng: -0.376288
+      "ccaa": "Canarias",
+      "province": "Santa Cruz de Tenerife",
+      "city": "El Médano",
+      "project": "proyecto10",
+      "description": "descripción10",
+      "date": new Date("2024-03-18T11:20:00"),
+      "lat": 28.0442,
+      "lng": -16.5387
     }
   ];
 }
