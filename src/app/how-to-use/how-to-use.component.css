@@ -10,6 +10,10 @@ h1, h2, h3 {
     margin-top: 20px;
 }
 
+section {
+    scroll-margin-top: 6em
+}
+
 p {
     margin: 10px 0;
     font-size: 16px;
@@ -35,4 +39,33 @@ h2 + .subtitle
 
 img {
     border: 1px solid black;
+}
+
+/* Index Styling */
+nav.index {
+    border: 1px solid var(--primary-color);
+    width: 400px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+nav.index a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    will-change: color;
+    transition: color .2s;
+    color: black;
+}
+
+nav.index a:hover {
+    color: var(--accent-color);
+}
+
+nav.index a.lvl-2 {
+    padding-left: 15px;
+}
+
+nav.index a.lvl-3 {
+    padding-left: 30px;
 }

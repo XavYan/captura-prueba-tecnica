@@ -9,6 +9,18 @@
     --accent-color: #9FC53F;
 }
 
+html {
+    /* For a better scrolling when using links in how-to-use page */
+    scroll-behavior: smooth;
+}
+
+/* If user has selected a preference in the navigator to not to use smooth scrolling */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 body {
     margin: 0;
 }
@@ -25,7 +37,7 @@ h2, h3, h4 {
     font-weight: 500;
 }
 
-p, li {
+p, li, a {
     margin: 0;
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
