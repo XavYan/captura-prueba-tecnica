@@ -9,11 +9,6 @@ footer {
     align-items: center;
 }
 
-footer > p {
-    text-align: right;
-    align-self: self-end;
-}
-
 /* Navigator */
 nav span {
     font-family: "Quicksand", sans-serif;
@@ -48,4 +43,21 @@ nav a {
 nav a:hover {
     color: var(--primary-color);
     cursor: pointer;
+}
+
+/* Right side */
+.right-side {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.right-side img {
+    margin-bottom: 5px;
+}
+
+.right-side p {
+    text-align: right;
 }
