@@ -2,7 +2,10 @@
     <h1>Descubre tus puntos de interés</h1>
 
     <!-- Map component to isolate map library -->
-    <app-map [markerList]="markerList" />
+    <app-map
+        [markerList]="markerList"
+        (createNewMarkerEvent)="createNewMarker($event)"
+    />
 
     <!-- Table to list all Markers -->
     <app-marker-table [markerList]="markerList" />
