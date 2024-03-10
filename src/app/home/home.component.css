@@ -3,3 +3,7 @@ main {
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
     background-color: lightcoral;
 }
+
+#map {
+    height: 280px;
+}
