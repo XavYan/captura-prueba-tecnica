@@ -5,6 +5,6 @@ export const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
-        title: 'CONECTA - Página princial'
+        title: 'CAPTURA - Página princial'
     }
 ];
