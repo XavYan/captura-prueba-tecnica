@@ -79,7 +79,8 @@ tbody > tr:hover {
     width: 180px;
 }
 
-.filter-row input:focus-visible {
+.filter-row input:focus-visible,
+.filter-row select:focus-visible {
     outline-color: var(--accent-color);
 }
 

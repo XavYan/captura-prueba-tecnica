@@ -13,12 +13,16 @@ body {
     margin: 0;
 }
 
-h1 {
+h1, h2, h3, h4 {
     margin: 0;
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
+}
+
+h2, h3, h4 {
+    font-weight: 500;
 }
 
 p, li {
