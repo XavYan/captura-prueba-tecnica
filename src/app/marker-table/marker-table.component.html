@@ -2,10 +2,12 @@
     <div class="filter-row">
         <div class="filter">
             <label for="projectSearch">Proyecto</label>
+            <!-- The input value is connected to projectSearch variable through ngModel -->
             <input [(ngModel)]="projectSearch" name="projectSearch">
         </div>
         <div class="filter">
             <label for="keySort">Ordenar por</label>
+            <!-- The input value is connected to markerKeySort variable through ngModel -->
             <select name="keySort" [(ngModel)]="markerKeySort" name="markerKeySort">
                 <option value="ccaa">CC.AA.</option>
                 <option value="province">Provincia</option>
@@ -21,6 +23,7 @@
     <div class="filter-row">
         <div class="filter">
             <label for="citySearch">Ciudad</label>
+            <!-- The input value is connected to citySearch variable through ngModel -->
             <select name="citySearch" [(ngModel)]="citySearch" name="citySearch">
                 <option default value="">--</option>
                 @for (city of this.getCities(); track $index) {
