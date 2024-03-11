@@ -1,5 +1,7 @@
 <header>
+    <!-- Logo with a routerLink to the Home page -->
     <a [routerLink]="['/']">
+        <!-- If is a desktop user -->
         @if (this.screenWidth > 425) {
             <img
                 class="logo"
@@ -7,6 +9,7 @@
                 src="../../assets/captura-logo-510x141.png"
                 priority
             />
+        <!-- If is a mobile user -->
         } @else {
             <img
                 class="logo"
@@ -17,6 +20,8 @@
         }
     </a>
 
+    <!-- Navigator to different sections of the application -->
+    <!-- Just '/how-to-use' for now -->
     <nav>
         <ul>
             <li><a [routerLink]="['/how-to-use']">Cómo funciona</a></li>

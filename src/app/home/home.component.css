@@ -1,6 +1,10 @@
 main {
     max-width: 100%;
+
+    /* This style lets main page to get minimum the full viewport height */
+    /* and more height if needed */
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
+
     padding: 30px;
     box-sizing: border-box;
 }

@@ -43,6 +43,8 @@ export class MarkerTableComponent {
     }
   }
 
+  // filterTable() function is used to filter and sort the marker table
+  // with the user inputs
   filterTable(): Marker[] {
     let filteredMarkerList = this.markerList
       .filter(
@@ -57,6 +59,8 @@ export class MarkerTableComponent {
       .sort((a, b) => a[this.markerKeySort].toString().localeCompare(b[this.markerKeySort].toString()));
   }
 
+  // Get all the unique cities from markers
+  // in order to set the city select options
   getCities(): string[] {
     const markerCities: string[] = [];
     for (const marker of this.markerList) {

@@ -24,10 +24,10 @@ export class MapComponent implements OnInit, OnChanges {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(this.map);
 
-    // Setting the markers into Map
+    // Setting the markers into the map
     this.setMarkers();
 
-    // Finally, we connect out onMapClick function
+    // Finally, we connect our onMapClick function
     // with map click event to let users create
     // a new marker
     // 'this' is sent to set the context of the event
@@ -35,7 +35,7 @@ export class MapComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // Setting the markers into Map
+    // Setting the markers into map
     this.setMarkers();
   }
 
@@ -48,11 +48,12 @@ export class MapComponent implements OnInit, OnChanges {
 
   setMarkerIntoMap(marker: Marker) {
     // If map is undefined (which shouldn't)
-    // we don't do nothing
+    // we won't do anything
     if (this.map === undefined) {
       return;
     }
 
+    // Creating the marker with all its info into a popup
     const markerPoint = L.marker([marker.lat, marker.lng]).addTo(this.map);
     markerPoint.bindPopup(`
       <b>CC.AA.:</b> ${marker.ccaa}<br>
@@ -66,6 +67,7 @@ export class MapComponent implements OnInit, OnChanges {
     `);
   }
 
+  // Method to execute when the user clicks on the map
   onMapClick(e: LeafletMouseEvent) {
     // If map is undefined (which shouldn't)
     // we don't do nothing

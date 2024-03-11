@@ -20,6 +20,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   markerList: Marker[] = [];
 
+  // This mapComponent let us to share with the map
+  // the marker we want to focus
+  // (from MarkerTable, when the user makes a click)
   @ViewChild(MapComponent)
   private mapComponent!: MapComponent;
 
@@ -55,7 +58,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   locateMarker(marker: Marker) {
-    console.log("Localizar marcador " + marker.project);
     this.mapComponent.locateMarker(marker);
   }
 }

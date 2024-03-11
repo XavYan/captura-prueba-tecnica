@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
 
+/* Global variables to be used around the document */
 :root {
     --header-height: 80px;
     --footer-height: 100px;
