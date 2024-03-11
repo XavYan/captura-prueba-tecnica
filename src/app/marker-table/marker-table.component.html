@@ -30,35 +30,37 @@
         </div>
     </div>
 </div>
-<table>
-    <thead>
-        <tr>
-            <th>CC.AA.</th>
-            <th>Provincia</th>
-            <th>Ciudad</th>
-            <th>Proyecto</th>
-            <th>Descripción</th>
-            <th>Fecha</th>
-            <th>Latitud</th>
-            <th>Longitud</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (marker of filterTable(); track $index) {
-            <tr 
-                [attr.data-row-lat]="marker.lat"
-                [attr.data-row-lng]="marker.lng"
-                (click)="onMarkerRowClick($event)"
-            >
-                <td>{{ marker.ccaa }}</td>
-                <td>{{ marker.province }}</td>
-                <td>{{ marker.city }}</td>
-                <td>{{ marker.project }}</td>
-                <td>{{ marker.description }}</td>
-                <td>{{ marker.date.toLocaleString() }}</td>
-                <td>{{ marker.lat }}</td>
-                <td>{{ marker.lng }}</td>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>CC.AA.</th>
+                <th>Provincia</th>
+                <th>Ciudad</th>
+                <th>Proyecto</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @for (marker of filterTable(); track $index) {
+                <tr 
+                    [attr.data-row-lat]="marker.lat"
+                    [attr.data-row-lng]="marker.lng"
+                    (click)="onMarkerRowClick($event)"
+                >
+                    <td>{{ marker.ccaa }}</td>
+                    <td>{{ marker.province }}</td>
+                    <td>{{ marker.city }}</td>
+                    <td>{{ marker.project }}</td>
+                    <td>{{ marker.description }}</td>
+                    <td>{{ marker.date.toLocaleString() }}</td>
+                    <td>{{ marker.lat }}</td>
+                    <td>{{ marker.lng }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,11 +1,20 @@
 <header>
     <a [routerLink]="['/']">
-        <img
-            class="logo"
-            alt="logo"
-            src="../../assets/CAPTURA-LOGO-510px-141px.png"
-            priority
-        />
+        @if (this.screenWidth > 425) {
+            <img
+                class="logo"
+                alt="logo"
+                src="../../assets/CAPTURA-LOGO-510px-141px.png"
+                priority
+            />
+        } @else {
+            <img
+                class="logo"
+                alt="logo"
+                src="../../assets/captura-mobile.png"
+                priority
+            />
+        }
     </a>
 
     <nav>

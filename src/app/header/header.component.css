@@ -23,6 +23,12 @@ header a {
     height: 55%;
 }
 
+@media only screen and (max-width: 425px) {
+    .logo {
+        height: 80%;
+    }
+}
+
 /* Navigator styling */
 nav ul {
     display: flex;

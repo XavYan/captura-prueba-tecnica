@@ -42,11 +42,13 @@ img {
 }
 
 /* Index Styling */
+
 nav.index {
     border: 1px solid var(--primary-color);
-    width: 400px;
+    max-width: 400px;
     box-sizing: border-box;
     padding: 10px;
+    min-width: 280px;
 }
 
 nav.index a {
@@ -56,6 +58,12 @@ nav.index a {
     will-change: color;
     transition: color .2s;
     color: black;
+}
+
+@media only screen and (max-width: 425px) {
+    nav.index a {
+        font-size: 14px;
+    }
 }
 
 nav.index a:hover {
@@ -68,4 +76,10 @@ nav.index a.lvl-2 {
 
 nav.index a.lvl-3 {
     padding-left: 30px;
+}
+
+@media only screen and (max-width: 425px) {
+    img {
+        width: 70%;
+    }
 }
