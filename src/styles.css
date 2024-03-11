@@ -62,3 +62,38 @@ p, li, a {
     font-weight: 400;
     font-style: normal;
 }
+
+/* Loading styles */
+.loading {
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading::after {
+    content: '';
+
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-top: 10px solid var(--accent-color);
+    border-bottom: 10px solid var(--accent-color);
+    border-left: 10px solid rgba(0,0,0,0);
+    border-right: 10px solid rgba(0,0,0,0);
+    border-radius: 50%;
+    animation: spinner 1s infinite;
+}
+
+@keyframes spinner {to{transform: rotate(.5turn)}}
+
+html:has(div.loading) {
+    overflow: hidden;
+}

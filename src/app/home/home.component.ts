@@ -19,6 +19,7 @@ import { MarkerService } from '../services/marker.service';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   markerList: Marker[] = [];
+  loading: boolean = true;
 
   // This mapComponent let us to share with the map
   // the marker we want to focus
@@ -38,21 +39,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   createNewMarker(marker: ReportMarker) {
+    this.loading = true;
     this.markerService.createNewMarker(marker).subscribe({
       next: response => {
         this.updateMarkerList();
       },
       error: response => {
         alert("No se ha podido crear correctamente el marcador.");
+      },
+      complete: () => {
+        this.loading = false;
       }
     });
   }
 
   updateMarkerList() {
+    this.loading = true;
     this.markerService.getAllMarkers().subscribe({
       next: response => { this.markerList = response; },
       error: () => {
         alert("Ha ocurrido un error al obtener los datos. Si el error persiste, por favor contacte con soporte.");
+      },
+      complete: () => {
+        this.loading = false;
       }
     });
   }
