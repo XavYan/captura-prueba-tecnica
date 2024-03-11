@@ -25,13 +25,13 @@ Además, puedes **localizar un marcador en el mapa a través de la tabla**, simp
 Para instalar el proyecto en local, debe primero descargar el proyecto:
 
 ```bash
-git clone https://github.com/XavYan/CAPTURA-prueba-tecnica.git
+git clone https://github.com/XavYan/captura-prueba-tecnica.git
 ```
 
 Nos movemos hacia la carpeta raíz del proyecto:
 
 ```bash
-cd CAPTURA-prueba-tecnica
+cd captura-prueba-tecnica
 ```
 
 A continuación, y estando dentro de la carpeta raíz del proyecto, instalamos las dependencias necesarias:
