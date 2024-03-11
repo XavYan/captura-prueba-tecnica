@@ -56,7 +56,7 @@ Una vez instalado en local, si queremos compilar el proyecto para desplegarlo en
 npm run build
 ```
 
-Si lo hemos hecho bien, encontraremos en la carpeta raíz del proyecto la carpeta `dist`. Dentro de `dist`, la carpeta `browser` que contiene es la que podemos distribuir para realizar el despliegue.
+Si lo hemos hecho bien, encontraremos en la carpeta raíz del proyecto la carpeta `dist`, que contiene a su vez la carpeta con el nombre del proyecto, `captura`. Dentro de `captura`, se encuentra la carpeta `browser`, que contiene los ficheros que podemos distribuir para realizar el despliegue.
 
 La estructura que nos deberíamos encontrar en la carpeta `dist` debería ser similar a la siguiente:
 
