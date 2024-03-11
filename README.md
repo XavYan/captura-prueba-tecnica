@@ -66,7 +66,7 @@ dist
     ├── 3rdpartylicenses.txt
     └── browser
         ├── assets
-        │   ├── CAPTURA-LOGO-510px-141px.png
+        │   ├── captura-logo-510x141.png
         │   ├── captura-mobile.png
         │   ├── github.png
         │   ├── how-to-use-gif-2.webp
