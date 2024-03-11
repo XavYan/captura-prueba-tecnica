@@ -94,6 +94,7 @@ p, li, a {
 
 @keyframes spinner {to{transform: rotate(.5turn)}}
 
+/* Only apply overflow:hidden when loading class exists in the DOM */
 html:has(div.loading) {
     overflow: hidden;
 }
